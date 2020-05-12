@@ -542,7 +542,6 @@ function updateTopClientsChart() {
     if ("FTLnotrunning" in data) {
       return;
     }
->>>>>>> 0468c6cf7c2eab4cc348f03b2a8554bb74d444cf
 
     // Clear tables before filling them with data
     $("#client-frequency td")
