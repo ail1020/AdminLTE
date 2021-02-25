@@ -146,7 +146,7 @@
 
             $curdate = date('Y-m-d H:i:s');
             $date = new DateTime();
-            $date->modify('-'.$durationdays.' day');
+            // $date->modify('-'.$durationdays.' day');
             $start_date =$date->format('Y-m-d H:i:s');
 
             $sql ="SELECT * from speedtest order by id DESC limit 1";
