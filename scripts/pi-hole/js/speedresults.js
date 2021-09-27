@@ -10,7 +10,8 @@ function escapeRegex(text) {
   var map = {
     "(": "\\(",
     ")": "\\)",
-    ".": "\\."
+    ".": "\\.",
+    "\": "\\"
   };
   return text.replace(/[().]/g, function (m) {
     return map[m];
