@@ -15,6 +15,10 @@ require_once "scripts/pi-hole/php/gravity.php";
 <span class="queries-blocked"></span>
 <span class="graphs-grid"></span>
 <span class="graphs-ticks"></span>
+
+<span class="speedtest-upload"></span>
+<span class="speedtest-download"></span>
+<span class="speedtest-ping"></span>
 <!-- Small boxes (Stat box) -->
 <div class="row">
     <div class="col-lg-3 col-sm-6">
@@ -105,7 +109,7 @@ require_once "scripts/pi-hole/php/gravity.php";
         </div>
         <div class="box-body">
           <div class="chart">
-          <canvas id="speedtestChart" width="800" height="140"></canvas>
+          <canvas id="speedtestChart" width="800" height="240"></canvas>
           </div>
         </div>
         <div class="overlay">

@@ -239,3 +239,13 @@ td.highlight {
 .iradio_minimal-blue {
   margin-right: 8px;
 }
+
+.speedtest-upload{
+  background-color: #FF6384;
+}
+.speedtest-download{
+  background-color: #3C8DBC
+}
+.speedtest-ping{
+  background-color: #00aa60
+}

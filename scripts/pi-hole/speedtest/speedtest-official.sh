@@ -20,12 +20,13 @@ else
     /usr/bin/speedtest --accept-gdpr --accept-license -f json-pretty > /tmp/speedtest.log || nointernet
 fi
 
+# sed 's/,/./g' fix for those regions use , instead of .
 
 FILE=/tmp/speedtest.log
 if [[ -f "$FILE" ]]; then
     stop=$(date +"%Y-%m-%d %H:%M:%S")
-    download=`cat /tmp/speedtest.log| jq -r '.download.bandwidth' | awk '{$1=$1*8/1000/1000; print $1;}'`
-    upload=`cat /tmp/speedtest.log| jq -r '.upload.bandwidth' | awk '{$1=$1*8/1000/1000; print $1;}'`
+    download=`cat /tmp/speedtest.log| jq -r '.download.bandwidth' | awk '{$1=$1*8/1000/1000; print $1;}' | sed 's/,/./g' `
+    upload=`cat /tmp/speedtest.log| jq -r '.upload.bandwidth' | awk '{$1=$1*8/1000/1000; print $1;}' | sed 's/,/./g'`
     server_name=`cat /tmp/speedtest.log| jq -r '.server.name'`
     isp=`cat /tmp/speedtest.log| jq -r '.isp'`
     server_ip=`cat /tmp/speedtest.log| jq -r '.server.ip'`

@@ -1934,3 +1934,13 @@ td.highlight {
 #dns .col-md-11 {
   width: 84%;
 }
+
+.speedtest-upload{
+  background-color: #bc4031;
+}
+.speedtest-download{
+  background-color: #00c0ef;
+}
+.speedtest-ping{
+  background-color: #f39c12;
+}

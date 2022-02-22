@@ -5962,3 +5962,13 @@ td.highlight {
   border-color: #d8b013 !important;
   color: #f3e8c8 !important;
 }
+
+.speedtest-upload{
+  background-color: #FF6384;
+}
+.speedtest-download{
+  background-color: #3C8DBC;
+}
+.speedtest-ping{
+  background-color: #00aa60;
+}
