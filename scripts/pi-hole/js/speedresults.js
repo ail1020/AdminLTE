@@ -26,13 +26,13 @@ $(document).ready(function () {
   // Do we want to filter queries?
   var GETDict = {};
   location.search
-    .substr(1)
+    .slice(1)
     .split("&")
     .forEach(function (item) {
       GETDict[item.split("=")[0]] = item.split("=")[1];
     });
 
-  var APIstring = "api.php?getAllSpeedTestData&PHP";
+  var APIstring = "api.php?getAllSpeedTestData";
 
   tableApi = $("#all-queries").DataTable({
     dom:
@@ -48,12 +48,20 @@ $(document).ready(function () {
       null,
       {
         render: function (data, type, _full, _meta) {
-          return type === "display" ? moment(data).format("Y-MM-DD HH:mm:ss z") : data;
+          if (type === "display") {
+            data = moment.utc(data, "YYYY-MM-DD HH:mm:ss").local().format();
+          }
+
+          return data;
         },
       },
       {
         render: function (data, type, _full, _meta) {
-          return type === "display" ? moment(data).format("Y-MM-DD HH:mm:ss z") : data;
+          if (type === "display") {
+            data = moment.utc(data, "YYYY-MM-DD HH:mm:ss").local().format();
+          }
+
+          return data;
         },
       },
       null,
